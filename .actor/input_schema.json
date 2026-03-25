@@ -33,7 +33,8 @@
             "description": "Sort order for reviews.",
             "default": "most_recent",
             "editor": "select",
-            "enum": ["most_recent", "detailed_reviews"]
+            "enum": ["most_recent", "detailed_reviews"],
+            "enumTitles": ["Most Recent", "Detailed Reviews"]
         },
         "ratingIs": {
             "title": "⭐ Include Ratings",
