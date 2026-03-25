@@ -12,7 +12,7 @@
             "prefill": ["https://x.com/apify", "@apify"]
         },
         "maxResults": {
-            "title": "Maximum number of results",
+            "title": "Maximum Number of Results",
             "type": "integer",
             "description": "The maximum number of reviews to scrape per place.",
             "default": 100,
@@ -20,7 +20,7 @@
             "editor": "number"
         },
         "parseAllResults": {
-            "title": "Parse all available results",
+            "title": "Parse All Available Results",
             "type": "boolean",
             "description": "If checked, the scraper will attempt to scrape all results",
             "default": false,
