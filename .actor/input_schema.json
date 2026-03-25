@@ -28,7 +28,7 @@
         },
         "sortBy": {
             "title": "↕️ Sort by",
-            "sectionCaption": "🧰 Filters",
+            "sectionCaption": "🧰 Filters (optional)",
             "type": "string",
             "description": "Sort order for reviews.",
             "default": "most_recent",
@@ -63,7 +63,7 @@
             "enumTitles": ["🇬🇧 English", "🇫🇷 French", "🇮🇹 Italian", "🇪🇸 Spanish"]
         },
         "searchResultsDatasetId": {
-            "title": "🗂 Use Results Datasets (Optional)",
+            "title": "🗂 Use Results Datasets",
             "type": "array",
             "description": "Select datasets containing search results from [Zillow Search Scraper](https://apify.com/api-ninja/zillow-search-scraper). When provided, the scraper will process all properties from these datasets. Note: The property field above must still contain at least one entry even when using datasets",
             "resourceType": "dataset",
