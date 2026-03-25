@@ -1,0 +1,83 @@
+{
+  "title": "Tripadvisor Reviews Scraper Input",
+  "description": "📌 Input schema for the Tripadvisor Reviews Scraper actor.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "query": {
+      "title": "🔗 Twitter URLs or handle",
+      "type": "array",
+      "description": "",
+      "editor": "stringList",
+      "prefill": ["https://x.com/apify", "@apify"]
+    },
+    "reviewsPerPlace": {
+      "title": "Maximum number of results",
+      "type": "integer",
+      "description": "The maximum number of reviews to scrape per place.",
+      "default": 100,
+      "minimum": 0,
+      "editor": "number"
+    },
+    "parseAllReviews": {
+      "title": "Parse all available results",
+      "type": "boolean",
+      "description": "If checked, the scraper will attempt to scrape all results",
+      "default": false,
+      "editor": "checkbox"
+    },
+    "sortBy": {
+      "title": "↕️ Sort by",
+      "sectionCaption": "🧰 Filters",
+      "type": "string",
+      "description": "Sort order for reviews.",
+      "default": "most_recent",
+      "editor": "select",
+      "enum": [
+        "most_recent",
+        "detailed_reviews"
+      ]
+    },
+    "ratingIs": {
+      "title": "⭐ Include Ratings",
+      "type": "array",
+      "description": "Restrict results to reviews with specific star ratings.",
+      "editor": "select",
+      "items": {
+        "type": "string",
+          "enum": ["1", "2", "3", "4", "5"],
+          "enumTitles": [ "⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"]
+      }
+    },
+    "lang": {
+      "title": "🗣️ Language (regex)",
+      "type": "string",
+      "description": "Language to filter reviews by (e.g., 'es,fr'). When using this, only query and locale can be specified.",
+      "editor": "textfield",
+      "pattern": "^[a-z]{2}(?:,[a-z]{2})*$"
+    },
+    "langselect": {
+      "title": "🗣️ Language (select)",
+      "type": "string",
+      "description": "Language–country code for localization. Matches the country selector in the TripAdvisor website footer.",
+      "default": "en-US",
+      "editor": "select",
+      "enum": [
+        "en", "fr", "it", "es"
+      ],
+      "enumTitles": [
+        "🇬🇧 English", "🇫🇷 French", "🇮🇹 Italian", "🇪🇸 Spanish"
+      ]
+    },
+    "searchResultsDatasetId":{
+      "title": "🗂 Use Results Datasets (Optional)",
+      "type": "array",
+      "description": "Select datasets containing search results from [Zillow Search Scraper](https://apify.com/api-ninja/zillow-search-scraper). When provided, the scraper will process all properties from these datasets. Note: The property field above must still contain at least one entry even when using datasets",
+      "resourceType": "dataset",
+      "resourcePermissions": ["READ"]
+    }
+  },
+  "required": [
+    "query"
+  ]
+}
