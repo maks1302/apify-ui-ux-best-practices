@@ -34,7 +34,7 @@
             "default": "most_recent",
             "editor": "select",
             "enum": ["most_recent", "detailed_reviews"],
-            "enumTitles": ["Most Recent", "Detailed Reviews"]
+            "enumTitles": ["Most Recent", "Newest First"]
         },
         "ratingIs": {
             "title": "⭐ Include Ratings",
