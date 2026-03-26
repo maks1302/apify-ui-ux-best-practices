@@ -47,6 +47,14 @@
                 "enumTitles": ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"]
             }
         },
+        "engagementMin  Likes": {
+            "title": "❤️ Minimum Likes",
+            "type": "integer",
+            "description": "Minimum number of likes (hearts). Leave empty for no minimum.",
+            "editor": "number",
+            "minimum": 0,
+            "unit": "likes"
+        },
         "searchResultsDatasetId": {
             "title": "🗂 Use Results Datasets",
             "type": "array",
