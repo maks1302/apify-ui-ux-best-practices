@@ -7,9 +7,9 @@
         "query": {
             "title": "🔗 Twitter URLs or handle",
             "type": "array",
-            "description": "",
+            "description": "Twitter URLs or handles to scrape. Accepts both full URLs and usernames.",
             "editor": "stringList",
-            "prefill": ["https://x.com/apify", "@apify"]
+            "prefill": ["https://x.com/apify", "@apify", "apify"]
         },
         "maxResults": {
             "title": "Maximum Number of Results",
