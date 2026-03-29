@@ -85,8 +85,9 @@
         "pageFunction": {
             "title": "Page function",
             "sectionCaption": "⚙️ Advanced Options",
+            "sectionDescription": "Function executed for each request",
             "type": "string",
-            "description": "Function executed for each request",
+            "description": "Function executed for each request.",
             "editor": "javascript",
             "prefill": "async () => { return $('title').text(); }"
         }
