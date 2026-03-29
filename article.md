@@ -36,7 +36,7 @@ That's scannable in two seconds. Most users won't read every field label — the
 
 > 👉 [Apify input schema documentation](https://docs.apify.com/platform/actors/development/actor-definition/input-schema)
 
-📸 _[SCREENSHOT: Your schema description field in the Apify actor editor, showing formatted markdown with emojis]_
+![Schema description field in the Apify actor editor](./article-title-images/good-input-schema-description.png)
 
 ---
 
@@ -62,7 +62,7 @@ I also use emojis consistently in section and field names. It sounds like a mino
 
 > 👉 [Apify actor input schema — sections](https://docs.apify.com/platform/actors/development/actor-definition/input-schema/specification/fields)
 
-📸 _[SCREENSHOT: Side-by-side of a cluttered top-level schema vs your clean version with a collapsed Filters section]_
+![Cluttered schema versus clean schema with collapsed filters](./article-title-images/cluttered-vs-clean-schema-collapsed-filters.jpeg)
 
 ---
 
@@ -82,7 +82,7 @@ https://www.instagram.com/username
 
 Users immediately understand what's accepted without reading any documentation. Since I've done this consistently across my actors, the format-related support messages have dropped to almost nothing.
 
-📸 _[SCREENSHOT: Your main input field showing the multi-format placeholder examples]_
+![Main input field with multi-format placeholder examples](./article-title-images/main-input-placeholder-examples.png)
 
 ---
 
@@ -151,7 +151,7 @@ while (true) {
 }
 ```
 
-📸 _[SCREENSHOT: The max results field and Parse All checkbox as they appear in your actor's UI]_
+![Max results field and Parse All checkbox](./article-title-images/max-results-parse-all-checkbox.png)
 
 ---
 
@@ -171,7 +171,7 @@ When you have a numeric filter — say, minimum likes on a tweet — the field l
 
 I added this to my Twitter/X Search Actor after a support message asking whether the minimum likes field expected a raw number or something in thousands. One `unit` property later, I haven't gotten that question since. I also got direct feedback from a user saying the fields felt clearer than competing actors — which I'll take.
 
-📸 _[SCREENSHOT: A numeric field showing the unit suffix rendered inside the input box]_
+![Numeric field with unit suffix inside the input](./article-title-images/numeric-field-unit-suffix.png)
 
 ---
 
@@ -197,7 +197,7 @@ The pattern runs before the actor starts. If the input doesn't match, the user g
 
 > 👉 [Apify JSON schema validation](https://docs.apify.com/platform/actors/development/actor-definition/input-schema/specification)
 
-📸 _[SCREENSHOT: The validation error message shown in the Apify UI when a pattern check fails]_
+![Validation error message shown in the Apify UI](./article-title-images/validation-error-pattern-check.png)
 
 ---
 
@@ -219,7 +219,7 @@ The `enum` array defines the actual values your code receives. `enumTitles` defi
 
 The user sees flags and full language names. Your code receives `"en"`. If I hadn't added `enumTitles` to my older actors, users would be staring at a dropdown that shows `["en", "fr", "it", "es"]` and trying to remember what `"it"` means. I still have two older actors where I forgot to do this — I still get occasional confused messages about those dropdowns. It's on my list.
 
-📸 _[SCREENSHOT: A select dropdown open in your actor UI, showing flags and readable enumTitles]_
+![Select dropdown with flags and readable enumTitles](./article-title-images/select-dropdown-flags-enumtitles.png)
 
 ---
 
@@ -242,7 +242,7 @@ Multiselect fields don't show up much in actor schemas, but when the use case fi
 
 Users select one or more star ratings using actual star icons — exactly how they'd think about ratings on the review site itself. The values your code receives are clean numeric strings. Nobody has ever asked me what the options mean, which is how you know it's working. When a UI matches the user's existing mental model, it disappears — they just use it.
 
-📸 _[SCREENSHOT: The multiselect star rating field open in your TripAdvisor actor UI]_
+![Multiselect star rating field](./article-title-images/multiselect-star-rating-field.png)
 
 ---
 
@@ -252,7 +252,7 @@ Anything complex or optional goes into a collapsible `⚙️ Advanced` section. 
 
 Power users who need advanced options will look for them. Beginners who don't need them should never have to see them. Collapsible sections solve this without hiding anything — it's just hierarchy.
 
-📸 _[SCREENSHOT: A collapsed Advanced section in your actor UI, showing how it appears to new users]_
+![Collapsed Advanced section in the actor UI](./article-title-images/collapsed-advanced-section.png)
 
 ---
 
@@ -303,7 +303,7 @@ The two actors work as a pipeline and the schema makes that obvious without any 
 
 > 👉 [Apify dataset documentation](https://docs.apify.com/platform/storage/dataset)
 
-📸 _[SCREENSHOT: The dataset picker dropdown in your Zillow Property Details Scraper, showing a previous search run's dataset selected]_
+![Dataset picker dropdown with a previous run dataset selected](./article-title-images/dataset-picker-previous-run.png)
 
 ---
 
