@@ -89,7 +89,8 @@
             "type": "string",
             "description": "Function executed for each request.",
             "editor": "javascript",
-            "prefill": "async () => { return $('title').text(); }"
+            "prefill": "async () => { return $('title').text(); }",
+            "default": "async () => { return $('title').text(); }"
         }
     },
     "required": []
