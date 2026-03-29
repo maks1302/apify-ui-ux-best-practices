@@ -4,6 +4,14 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "URLs to enqueue directly. You can combine these with dataset-based inputs.",
+            "editor": "requestListSources",
+            "default": [{ "url": "https://example.com" }],
+            "prefill": [{ "url": "https://example.com" }]
+        },
         "query": {
             "title": "🔗 Twitter URLs or handle",
             "type": "array",
@@ -14,7 +22,7 @@
         "maxResults": {
             "title": "Maximum Number of Results",
             "type": "integer",
-            "description": "The maximum number of reviews to scrape per place.",
+            "description": "The maximum number of results to scrape. Ignored when Parse All Available Results is enabled.",
             "default": 100,
             "minimum": 1,
             "editor": "number"
@@ -22,7 +30,7 @@
         "parseAllResults": {
             "title": "Parse All Available Results",
             "type": "boolean",
-            "description": "If checked, the scraper will attempt to scrape all results",
+            "description": "If checked, the scraper will keep paginating until no more results are available.",
             "default": false,
             "editor": "checkbox"
         },
@@ -58,7 +66,7 @@
         "searchResultsDatasetId": {
             "title": "🗂 Use Results Datasets",
             "type": "array",
-            "description": "Select datasets containing search results from [Zillow Search Scraper](https://apify.com/api-ninja/zillow-search-scraper). When provided, the scraper will process all properties from these datasets. Note: The property field above must still contain at least one entry even when using datasets",
+            "description": "Select datasets from another Actor. Each dataset item should contain a `url` field that will be enqueued together with any Start URLs.",
             "resourceType": "dataset",
             "resourcePermissions": ["READ"]
         },
@@ -80,5 +88,5 @@
             "enumTitles": ["🇬🇧 English", "🇫🇷 French", "🇮🇹 Italian", "🇪🇸 Spanish"]
         }
     },
-    "required": ["query"]
+    "required": []
 }

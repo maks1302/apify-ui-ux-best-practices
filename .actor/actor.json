@@ -9,7 +9,7 @@
 	"input": "./input_schema.json",
 	"meta": {
 		"templateId": "js-empty",
-		"generatedBy": "<FILL-IN-MODEL>"
+		"generatedBy": "Codex with GPT-5"
 	},
 	"dockerfile": "../Dockerfile"
 }
