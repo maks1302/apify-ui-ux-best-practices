@@ -4,14 +4,6 @@
     "type": "object",
     "schemaVersion": 1,
     "properties": {
-        "startUrls": {
-            "title": "Start URLs",
-            "type": "array",
-            "description": "URLs to enqueue directly. You can combine these with dataset-based inputs.",
-            "editor": "requestListSources",
-            "default": [{ "url": "https://example.com" }],
-            "prefill": [{ "url": "https://example.com" }]
-        },
         "query": {
             "title": "🔗 Twitter URLs or handle",
             "type": "array",
