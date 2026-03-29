@@ -68,7 +68,10 @@
             "type": "string",
             "description": "Language to filter reviews by (e.g., 'es,fr'). When using this, only query and locale can be specified.",
             "editor": "textfield",
-            "pattern": "^[a-z]{2}(?:,[a-z]{2})*$"
+            "pattern": "^[a-z]{2}$",
+            "errorMessage": {
+                "pattern": "Language must be a two-letter language code (e.g., 'es' or 'fr')"
+            }
         },
         "langselect": {
             "title": "🗣️ Language (select)",
