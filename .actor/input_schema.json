@@ -36,7 +36,6 @@
         },
         "sortBy": {
             "title": "↕️ Sort by",
-            "sectionCaption": "🧰 Filters",
             "type": "string",
             "description": "Sort order for reviews.",
             "default": "most_recent",
@@ -71,7 +70,6 @@
             "resourcePermissions": ["READ"]
         },
         "lang": {
-            "sectionCaption": "🌐 Localization Filters",
             "title": "🗣️ Language (regex)",
             "type": "string",
             "description": "Language to filter reviews by (e.g., 'es,fr'). When using this, only query and locale can be specified.",
