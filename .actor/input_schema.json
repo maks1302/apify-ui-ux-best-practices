@@ -81,6 +81,14 @@
             "editor": "select",
             "enum": ["en", "fr", "it", "es"],
             "enumTitles": ["🇬🇧 English", "🇫🇷 French", "🇮🇹 Italian", "🇪🇸 Spanish"]
+        },
+        "pageFunction": {
+            "title": "Page function",
+            "sectionCaption": "⚙️ Advanced Options",
+            "type": "string",
+            "description": "Function executed for each request",
+            "editor": "javascript",
+            "prefill": "async () => { return $('title').text(); }"
         }
     },
     "required": []
