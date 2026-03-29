@@ -27,6 +27,7 @@
             "editor": "checkbox"
         },
         "sortBy": {
+            "sectionCaption": "🧰 Filters",
             "title": "↕️ Sort by",
             "type": "string",
             "description": "Sort order for reviews.",
@@ -62,6 +63,7 @@
             "resourcePermissions": ["READ"]
         },
         "lang": {
+            "sectionCaption": "🌐 Localization Filters",
             "title": "🗣️ Language (regex)",
             "type": "string",
             "description": "Language to filter reviews by (e.g., 'es,fr'). When using this, only query and locale can be specified.",
