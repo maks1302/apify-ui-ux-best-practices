@@ -1,66 +1,88 @@
-# Empty JavaScript template
+# Apify UI/UX Best Practices Showcase Actor
 
-<!-- This is an Apify template readme -->
+This repository is not meant to be a polished production scraper. It is a showcase Actor built to accompany the article in [article.md](./article.md) and demonstrate how I design Apify Actor input schemas to improve clarity, reduce user confusion, and increase conversion from page visit to actual run.
 
-Start a new [web scraping](https://apify.com/web-scraping) project quickly and easily in JavaScript (Node.js) with our empty project template. It provides a basic structure for building an Actor with [Apify SDK](https://docs.apify.com/sdk/js/) and allows you to easily add your own functionality.
+The codebase exists mainly as a practical reference for the article: a small Actor that implements the schema patterns and collection logic discussed there.
 
-## Included features
+## What this Actor showcases
 
-- **[Apify SDK](https://docs.apify.com/sdk/js/)** - toolkit for building [Actors](https://apify.com/actors)
-- **[Crawlee](https://crawlee.dev/)** - web scraping and browser automation library
+This project demonstrates several input-schema UX patterns I use across public Apify Actors:
+
+- A clear primary input instead of a cluttered top-level schema
+- Support for multiple input sources, including direct `startUrls` and dataset-based chaining through `searchResultsDatasetId`
+- A dedicated `parseAllResults` toggle instead of relying on magic values
+- A `maxResults` limit with predictable pagination behavior
+- Early input validation before the Actor starts doing work
+- A simple structure you can reuse when building article examples or new Actors
+
+## Why this repo exists
+
+The article argues that the input schema is the actual UI of an Apify Actor. This repository is the hands-on companion to that idea.
+
+It is meant to help readers:
+
+- see how those UX ideas translate into code
+- inspect a minimal Actor structure without unrelated production complexity
+- reuse individual patterns in their own Actors
+
+If you are looking for a full scraper, this repository is not that. The current `fetchPage()` implementation in [src/main.js](./src/main.js) is intentionally a placeholder so the focus stays on schema design and result-collection flow.
+
+## Project structure
+
+- [article.md](./article.md) - the article this Actor supports
+- [src/main.js](./src/main.js) - Actor entry point and example pagination flow
+- [src/request-sources.js](./src/request-sources.js) - request source building, including dataset input support
+- [src/collect-results.js](./src/collect-results.js) - reusable collection logic for `maxResults` and `parseAllResults`
+- [test/main.test.js](./test/main.test.js) - tests for the showcase logic
 
 ## How it works
 
-This template is useful when you're already familiar with the [Apify SDK](https://docs.apify.com/sdk/js) and [Crawlee](https://crawlee.dev/) and want to start with a clean slate. It does not include `puppeteer` or `playwright` so install them manually and update the Dockerfile if you need them.
+At a high level, the Actor:
 
-## Resources
+1. Reads the input
+2. Validates collection settings such as `maxResults`
+3. Builds request sources from direct URLs and optional dataset inputs
+4. Runs a simple paginated collection flow
+5. Pushes results while respecting `maxResults` unless `parseAllResults` is enabled
 
-- [Node.js tutorials](https://docs.apify.com/academy/node-js) in Academy
-- [Video guide on getting data using Apify API](https://www.youtube.com/watch?v=ViYYDHSBAKM)
-- [Integration with Make](https://apify.com/integrations), GitHub, Zapier, Google Drive, and other apps
-- A short guide on how to create Actors using code templates:
+This makes the repo useful as a reference implementation for the patterns described in the article, especially:
 
-[web scraper template](https://www.youtube.com/watch?v=u-i-Korzf8w)
+- parse-all behavior
+- dataset-to-dataset chaining
+- minimal and readable Actor structure
 
+## Run locally
 
-## Getting started
+Install dependencies:
 
-For complete information [see this article](https://docs.apify.com/platform/actors/development#build-actor-locally). To run the Actor use the following command:
+```bash
+npm install
+```
+
+Run the Actor locally:
 
 ```bash
 apify run
 ```
 
-## Deploy to Apify
+Or start it directly with Node.js:
 
-### Connect Git repository to Apify
+```bash
+npm start
+```
 
-If you've created a Git repository for the project, you can easily connect to Apify:
+## Run tests
 
-1. Go to [Actor creation page](https://console.apify.com/actors/new)
-2. Click on **Link Git Repository** button
+```bash
+npm test
+```
 
-### Push project on your local machine to Apify
+## Use this as a reference
 
-You can also deploy the project on your local machine to Apify without the need for the Git repository.
+If you are building your own Apify Actor, the most relevant parts to borrow are:
 
-1. Log in to Apify. You will need to provide your [Apify API Token](https://console.apify.com/account/integrations) to complete this action.
+- the request-source composition in [src/request-sources.js](./src/request-sources.js)
+- the collection-limit logic in [src/collect-results.js](./src/collect-results.js)
+- the schema and UX rationale explained in [article.md](./article.md)
 
-    ```bash
-    apify login
-    ```
-
-2. Deploy your Actor. This command will deploy and build the Actor on the Apify Platform. You can find your newly created Actor under [Actors -> My Actors](https://console.apify.com/actors?tab=my).
-
-    ```bash
-    apify push
-    ```
-
-## Documentation reference
-
-To learn more about Apify and Actors, take a look at the following resources:
-
-- [Apify SDK for JavaScript documentation](https://docs.apify.com/sdk/js)
-- [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
-- [Apify Platform documentation](https://docs.apify.com/platform)
-- [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
+The point of this repo is not the scraping target. The point is how the Actor is presented and structured for users.
